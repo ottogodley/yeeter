@@ -7,13 +7,25 @@ a {
   color: #00B7FF;
 }
 
+h1 {
+  text-align: center;
+  background-color:lightgrey;
+  margin: 50px;
+  margin-bottom: 5px;
+  border-color: 1px solid grey;
+}
+
 #content {
   border: 1px solid lightgray;
   padding: 30px;
+  margin: 50px;
+  margin-top: 5px;
   background-color: gainsboro;
+  border-radius: 10px;
 }
 
 #container {
   background-color: wheat;
   border: 1px solid grey;
+  border-radius: 10px;
 }

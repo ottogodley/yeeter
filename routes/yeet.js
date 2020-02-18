@@ -10,7 +10,7 @@ var gifEffect;
 async function yeetGif() {
     try {
         console.log('Yeeting ' + filename + ' with ' + gifEffect);
-        const {stdout, stderr} = await exec('cat ' + filename + ' | gif ' + gifEffect + ' | gif optimize --kb 120 > /app/public/out/output.gif');
+        const {stdout, stderr} = await exec('cat ' + filename + ' | gif ' + gifEffect + ' | gif optimize --kb 120 | gif resize -x 120 -y 120 > /app/public/out/output.gif');
         console.log('stdout:', stdout);
         console.log('stderr:', stderr);
     } catch (err) {
