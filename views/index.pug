@@ -4,17 +4,17 @@ block content
   div(id="container")
     h1= title
     div(id="content")
-      p Get ready to yeet some gifs
+      h4 Time to generate some gifs...
       hr
       form(action="/upload/image" method="post" enctype="multipart/form-data")
-        p Upload an image here:
+        h5 Upload:
           br
           input(type="file" name="uploadedImage")
-          br
           input(type="submit")
-        img(src="./in/in.gif" style="width:120px;height:120px;")
+          br
+          img(src="./in/in.gif" style="width:120px;height:120px;")
       hr
-      p Select an effect to apply to your image:
+      h5 Input an effect to apply to your image (all lower-case):
         form(action="/yeet/gif" method="post" enctype="multipart/form-data")
           input(type="text" name="effect")
           input(type="submit" value="YEET")
@@ -23,7 +23,7 @@ block content
 
       hr
 
-      p A quick reference of the effects available to you:
+      h5 A quick reference of the effects available to you:
       li roll               (☭ ͜ʖ ☭)
       li wobble             🍆( ͡° ͜ʖ ͡°)🍆
       li pulse              ( ͡◉ ͜ʖ ͡◉)
