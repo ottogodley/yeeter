@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#content {
+  border: 1px solid lightgray;
+  padding: 30px;
+  background-color: gainsboro;
+}
+
+#container {
+  background-color: wheat;
+  border: 1px solid grey;
+}
