@@ -1,6 +1,6 @@
 # Yeeter #
 
-A simple NodeJS Express frontend for (yeetgif)[https://github.com/sgreben/yeetgif]
+A simple NodeJS Express frontend for [yeetgif](https://github.com/sgreben/yeetgif)
 
 ## Usage ##
 
