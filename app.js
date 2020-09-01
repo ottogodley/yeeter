@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var uploadImageRouter = require('./routes/uploadimage');
 var yeetRouter = require('./routes/yeet');
 var resetRouter = require('./routes/reset');
+var refreshRouter = require('./routes/refresh');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/users', usersRouter);
 app.use('/upload', uploadImageRouter);
 app.use('/yeet', yeetRouter);
 app.use('/reset', resetRouter);
+app.use('/refresh', refreshRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

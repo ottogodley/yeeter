@@ -6,15 +6,20 @@ var formidable = require('formidable');
 
 var filename;
 var gifEffect;
+global.yeetCompleted = false;
 
 async function yeetGif() {
     try {
         console.log('Yeeting ' + filename + ' with ' + gifEffect);
-        const {stdout, stderr} = await exec('cat ' + filename + ' | gif ' + gifEffect + ' | gif optimize --kb 120 | gif resize -x 120 -y 120 > /app/public/out/output.gif');
+        const {stdout, stderr} = await exec('cat ' + filename + ' | gif ' + gifEffect + ' | gifsicle --resize 120x120 -o /app/public/out/output.gif');
         console.log('stdout:', stdout);
         console.log('stderr:', stderr);
+        console.log(filename + ' yeeted successfully with ' + gifEffect);
+        yeetCompleted = true;
+        return Promise.resolve(yeetCompleted);
     } catch (err) {
         console.error(err);
+        return Promise.reject(yeetCompleted);
     };
 };
 
@@ -29,11 +34,8 @@ router.post('/gif', function(req, res, next) {
     form.parse(req, function (err, fields, files) {
         gifEffect = fields.effect;
         filename = "/app/public/in/in.gif";
-        console.log('Yeeting ' + filename + ' with ' + gifEffect);
-        yeetGif();
+        yeetGif().then((stdout) => res.redirect("/"));
     });
-    console.log("Gif successfully YEETED, redirecting.");
-    res.redirect('/');
 });
 
 module.exports = router;

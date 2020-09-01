@@ -3,6 +3,20 @@ var router = express.Router();
 var formidable = require('formidable');
 var fs = require('fs');
 
+async function uploadImage(oldpath, newpath) {
+    let success = false;
+    try {
+        fs.copyFile(oldpath, newpath, function (err) {
+            if (err) throw err;
+        });
+        success = true;
+        return Promise.resolve(success);
+    } catch (err) {
+        console.error(err);
+        return Promise.reject(success);
+    };
+}
+
 /* GET UPLOAD IMAGE*/
 router.get('/image', function(req, res, next) {
     res.send('IMAGES!');
@@ -14,11 +28,12 @@ router.post('/image', function(req, res, next) {
         var oldpath = files.uploadedImage.path;
         filename = '/app/in/' + files.uploadedImage.name;
         var newpath = '/app/public/in/in.gif';
-        fs.copyFile(oldpath, newpath, function (err) {
-            if (err) throw err;
-        });
+        uploadImage(oldpath, newpath).then((success) => res.redirect("/"));
+        // fs.copyFile(oldpath, newpath, function (err) {
+        //     if (err) throw err;
+        // });
     });
-    res.redirect('/');
+    // res.redirect('/');
 });
 
 module.exports = router;

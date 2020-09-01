@@ -5,6 +5,8 @@ block content
     h1= title
     div(id="content")
       h4 Time to generate some gifs...
+      form(action="/reset" method="post" style="text-align:center;")
+        input(type="submit" value="Reset")
       hr
       form(action="/upload/image" method="post" enctype="multipart/form-data")
         h5 Upload:
@@ -18,6 +20,11 @@ block content
         form(action="/yeet/gif" method="post" enctype="multipart/form-data")
           input(type="text" name="effect")
           input(type="submit" value="YEET")
+        form(action="/refresh" method="post" enctype="multipart/form-data")
+          input(type="submit" value="Refresh")
+          table
+            tr
+              img(name="loadingGIF" src="./img/loadingcircle.gif" style="visibility:collapse;width:40px;height:40px;")
         br
         img(src="./out/output.gif")
 
@@ -50,7 +57,3 @@ block content
       li meta               (🧠 ͡ಠ ʖ̯ ͡ಠ)┌
       p To see documentation on the available effects, look 
         a(href="https://github.com/sgreben/yeetgif#usage") here
-      
-      form(action="/reset" method="post")
-        input(type="submit" value="Reset")
-
