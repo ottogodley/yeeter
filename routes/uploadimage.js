@@ -29,11 +29,7 @@ router.post('/image', function(req, res, next) {
         filename = '/app/in/' + files.uploadedImage.name;
         var newpath = '/app/public/in/in.gif';
         uploadImage(oldpath, newpath).then((success) => res.redirect("/"));
-        // fs.copyFile(oldpath, newpath, function (err) {
-        //     if (err) throw err;
-        // });
     });
-    // res.redirect('/');
 });
 
 module.exports = router;

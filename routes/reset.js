@@ -6,12 +6,14 @@ var formidable = require('formidable');
 
 var filename;
 var gifEffect;
+var cleanedUp = false;
 
 async function cleanUp() {
     try {
         const {stdout, stderr} = await exec('rm /app/public/in/in.gif && rm /app/public/out/output.gif');
         console.log('stdout:', stdout);
         console.log('stderr:', stderr);
+        cleanedUp = true;
     } catch (err) {
         console.error(err);
     };
@@ -19,9 +21,8 @@ async function cleanUp() {
 
 router.post('/', function(req, res, next) {
     console.log("Cleaning up...");
-    cleanUp();
+    cleanUp().then((cleanedUp) => res.redirect("/"));
     console.log("Cleaning finished, redirecting now...");
-    res.redirect('/');
 });
 
 module.exports = router;

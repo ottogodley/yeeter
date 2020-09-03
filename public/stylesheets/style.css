@@ -27,7 +27,20 @@ h5 {
   font-weight: bold;
 }
 
-#content {
+#header {
+  border: 10px solid lightgray;
+  padding: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 5px;
+  background-color: gainsboro;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 5px 5px 15px 5px #000000;
+  padding-left: 35%;
+}
+
+#contentcontainer {
   border: 10px solid lightgray;
   padding: 10px;
   margin: 200px;
@@ -37,6 +50,35 @@ h5 {
   -webkit-box-shadow: 5px 5px 15px 5px #000000; 
   box-shadow: 5px 5px 15px 5px #000000;
 }
+
+input[type=submit], input[type=button]{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #5A5A5A;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#5A5A5A;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+#rightcontent {
+  float: right;
+  display: inline-block;
+  width: 40%;
+  border-left: 2px solid lightgray;
+  padding-top: 10px;
+  padding-right: 30%;
+  padding-left: 20px;
+}
+
+#leftcontent {
+}
+
 
 #container {
   border: 1px solid grey;
