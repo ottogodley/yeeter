@@ -3,3 +3,4 @@
 **/public/in/**
 **/public/out/**
 **/node_modules/**
+**bin/gifsicle**
