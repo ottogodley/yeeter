@@ -45,6 +45,7 @@ h5 {
   padding: 10px;
   margin: 200px;
   margin-top: 5px;
+  margin-bottom: 10px;
   background-color: gainsboro;
   border-radius: 10px;
   -webkit-box-shadow: 5px 5px 15px 5px #000000; 
@@ -69,7 +70,7 @@ input[type=submit], input[type=button]{
 #rightcontent {
   float: right;
   display: inline-block;
-  width: 40%;
+  width: 35%;
   border-left: 2px solid lightgray;
   padding-top: 10px;
   padding-right: 30%;
@@ -77,6 +78,8 @@ input[type=submit], input[type=button]{
 }
 
 #leftcontent {
+  padding-bottom:150px;
+  padding-left: 50px;
 }
 
 
@@ -89,8 +92,44 @@ input[type=submit], input[type=button]{
   background: linear-gradient(to right, #3CCE73 0%, #1C6EA4 50%, #C06EC5 100%);
   -webkit-box-shadow: 2px 2px 15px 5px #000000; 
   box-shadow: 2px 2px 15px 5px #000000;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom:25px;
 }
 
 body.busy-cursor {
   cursor: progress;
+}
+
+#info {
+  font-size: 12px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  font-family: 'Roboto',sans-serif;
+  font-weight: bold;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
